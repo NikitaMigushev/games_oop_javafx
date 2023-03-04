@@ -53,4 +53,52 @@ public class WinTest {
         };
         assertThat(Win.check(board)).isFalse();
     }
+
+    @Test
+    public void whenCheckHorizontalTrue() {
+        int[][] board = {
+                {1, 1, 1, 1, 1},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+        };
+        assertThat(Win.checkHorizontal(board, 0)).isTrue();
+    }
+
+    @Test
+    public void whenCheckHorizontalFalse() {
+        int[][] board = {
+                {1, 1, 1, 1, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+        };
+        assertThat(Win.checkHorizontal(board, 0)).isFalse();
+    }
+
+    @Test
+    public void whenCheckVerticalTrue() {
+        int[][] board = {
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+        };
+        assertThat(Win.checkVertical(board, 2)).isTrue();
+    }
+
+    @Test
+    public void whenCheckVerticalFalse() {
+        int[][] board = {
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0},
+        };
+        assertThat(Win.checkVertical(board, 2)).isFalse();
+    }
 }
