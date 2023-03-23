@@ -18,7 +18,6 @@ public enum Cell {
         y = cy;
     }
 
-
     public int getX() {
         return x;
     }

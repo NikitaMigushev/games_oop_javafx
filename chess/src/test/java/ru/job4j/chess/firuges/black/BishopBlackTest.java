@@ -89,12 +89,8 @@ class BishopBlackTest {
                     bishopBlack.way(dest);
                 }
         );
-        Assertions.assertThat(exception.getMessage()).isEqualTo("Could not move by diagonal from %s to %s", source, dest);
-
-
+        Assertions.assertThat(exception.getMessage()).isEqualTo(
+                "Could not move by diagonal from %s to %s", source, dest
+        );
     }
-
-
-
-
 }
