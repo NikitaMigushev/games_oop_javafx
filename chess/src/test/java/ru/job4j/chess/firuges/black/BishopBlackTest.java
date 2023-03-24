@@ -43,6 +43,14 @@ class BishopBlackTest {
     }
 
     @Test
+    void whenWayC8H3ThenSuccess() {
+        BishopBlack bishopBlack = new BishopBlack(Cell.C8);
+        Cell[] way = bishopBlack.way(Cell.H3);
+        Cell[] expected = {Cell.D7, Cell.E6, Cell.F5, Cell.G4, Cell.H3};
+        Assertions.assertThat(way).isEqualTo(expected);
+    }
+
+    @Test
     void isDiagonalTrue() {
         Cell source = Cell.C1;
         Cell dest = Cell.G5;
